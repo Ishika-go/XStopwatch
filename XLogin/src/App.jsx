@@ -6,15 +6,15 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [error,setError] = useState("");
+  const [errorMessage,setErrorMessage] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     if(username=="user" && password=="password"){
       setIsLoggedIn(true);
-      // setError("");
+      setErrorMessage("");
       return;
     }else{
-      setError("Invalid username or password");
+      setErrorMessage("Invalid username or password");
       return;
     }
   };
@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <h2>Login Page</h2>
-      {<h3>{error}</h3>}
+      {<h3>{errorMessage}</h3>}
       {isLoggedIn ? (
         <h2>Welcome, user</h2>
       ) : (

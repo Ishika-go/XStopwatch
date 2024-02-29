@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <h2>Login Page</h2>
-      {<h3>{errorMessage}</h3>}
+      {errorMessage&&<h3>{errorMessage}</h3>}
       {isLoggedIn ? (
         <h2>Welcome, user</h2>
       ) : (
